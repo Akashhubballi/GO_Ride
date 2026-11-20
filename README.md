@@ -92,15 +92,6 @@ goride/
   - Two-column hero with live driver route simulation card.
   - 4-column feature and how-it-works grids.
 
----
-
-## 📄 Resume-Ready Project Bullet Points
-
-- **GoRide – Online Ride Booking Platform (HTML5, CSS3)**
-  - Engineered a high-conversion, 5-page responsive ride-hailing web platform prototype purely using semantic HTML5 and advanced CSS3 without any external UI frameworks or JavaScript.
-  - Implemented complex responsive layouts utilizing CSS Grid (`auto-fit`, `minmax`), Flexbox, CSS Variables, and 4-tier media query breakpoints ensuring zero horizontal overflow from 320px mobile to 4K displays.
-  - Built an interactive, zero-JS mobile navigation drawer and interactive ride-type radio selection using the pure CSS checkbox hack and semantic pseudo-classes (`:checked`, `:focus-visible`).
-  - Crafted handcrafted SVG illustrations and responsive UI components with micro-interactions, card elevation states, and accessible form controls.
 
 ---
 
