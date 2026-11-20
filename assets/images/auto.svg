@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120" fill="none">
+  <!-- Auto Rickshaw Vector -->
+  <defs>
+    <linearGradient id="autoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05D374"/>
+      <stop offset="100%" stop-color="#028646"/>
+    </linearGradient>
+    <linearGradient id="hoodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Road shadow -->
+  <ellipse cx="100" cy="108" rx="85" ry="6" fill="#0B0F19" fill-opacity="0.12"/>
+  <!-- Rear Wheel -->
+  <circle cx="50" cy="85" r="22" stroke="#1E293B" stroke-width="7" fill="#F8FAFC"/>
+  <circle cx="50" cy="85" r="11" stroke="#64748B" stroke-width="2" fill="#0F172A"/>
+  <circle cx="50" cy="85" r="4" fill="#05D374"/>
+  <!-- Front Wheel -->
+  <circle cx="152" cy="88" r="18" stroke="#1E293B" stroke-width="6" fill="#F8FAFC"/>
+  <circle cx="152" cy="88" r="9" stroke="#64748B" stroke-width="2" fill="#0F172A"/>
+  <circle cx="152" cy="88" r="3" fill="#05D374"/>
+  <!-- Auto Cabin Body -->
+  <path d="M35 82H145L150 72L120 40H60L35 60V82Z" fill="url(#autoGrad)"/>
+  <!-- Roof Canvas / Canopy -->
+  <path d="M30 55C30 35 48 24 75 24H125C136 24 142 30 144 42L118 42L55 42L30 55Z" fill="url(#hoodGrad)"/>
+  <!-- Windshield -->
+  <path d="M122 42L142 42L148 66H126L122 42Z" fill="#E0F2FE" fill-opacity="0.8" stroke="#0284C7" stroke-width="1.5"/>
+  <!-- Passenger Open Side Frame -->
+  <path d="M50 48H108V72H50V48Z" fill="#0F172A" fill-opacity="0.85" rx="4"/>
+  <!-- Seat detail -->
+  <rect x="54" y="62" width="28" height="8" rx="2" fill="#94A3B8"/>
+  <!-- Fender / Mudguard -->
+  <path d="M140 85C140 76 150 74 162 78" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Headlight -->
+  <circle cx="155" cy="72" r="5" fill="#FEF08A"/>
+</svg>

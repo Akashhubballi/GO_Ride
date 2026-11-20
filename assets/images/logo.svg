@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" fill="none">
+  <!-- Brand Icon -->
+  <rect x="4" y="8" width="44" height="44" rx="12" fill="#05D374"/>
+  <circle cx="26" cy="30" r="14" stroke="#0B0F19" stroke-width="4" stroke-dasharray="60 30" stroke-linecap="round"/>
+  <path d="M26 21L33 30H20L26 21Z" fill="#0B0F19"/>
+  <circle cx="26" cy="30" r="3.5" fill="#FFFFFF"/>
+  <!-- Typography -->
+  <text x="58" y="38" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="-0.5">Go<tspan fill="#05D374">Ride</tspan></text>
+  <circle cx="168" cy="22" r="3.5" fill="#05D374"/>
+</svg>

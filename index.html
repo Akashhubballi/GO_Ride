@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GoRide is a modern, reliable online ride booking platform offering bikes, autos, sedans, and SUVs with transparent upfront pricing and top-tier safety.">
+  <meta name="keywords" content="ride booking, cab service, bike taxi, auto rickshaw, sedan, car rental, GoRide, transportation">
+  <title>GoRide – Fast, Safe & Affordable Online Ride Booking</title>
+  
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. GLOBAL NAVIGATION BAR (PURE CSS RESPONSIVE)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="GoRide Homepage">
+        <div class="logo-symbol">G</div>
+        <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+      </a>
+
+      <!-- Pure CSS Mobile Menu Toggle (Checkbox Hack) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation Menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Links & Header CTA -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="booking.html" class="nav-link">Book Ride</a></li>
+          <li><a href="rides.html" class="nav-link">Vehicles</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Your Ride</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION WITH QUICK BOOKING WIDGET
+       ======================================================================== -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        
+        <!-- Left Column: Headline & Route Booking Card -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>⚡ Next-Generation Urban Mobility</span>
+          </div>
+          <h1 class="hero-title">Your Daily Commute, <span class="text-gradient">Reimagined.</span></h1>
+          <p class="hero-description">
+            Experience lightning-fast city travel with transparent fares. From budget bike taxis to spacious family SUVs, GoRide gets you there safely and comfortably.
+          </p>
+
+          <!-- Quick Route Booking Card -->
+          <div class="quick-booking-card">
+            <div class="booking-card-header">
+              <h2 class="booking-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Find &amp; Book Your Ride
+              </h2>
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Drivers Active Near You</span>
+              </div>
+            </div>
+
+            <form action="booking.html" method="GET" class="booking-form">
+              <!-- Pickup Field -->
+              <div class="form-group">
+                <label for="pickup" class="form-label">Pickup Location</label>
+                <div class="input-with-icon">
+                  <span class="input-icon pickup-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <path d="M12 2v2"></path>
+                      <path d="M12 20v2"></path>
+                      <path d="M2 12h2"></path>
+                      <path d="M20 12h2"></path>
+                    </svg>
+                  </span>
+                  <input type="text" id="pickup" name="pickup" class="form-control" placeholder="Enter current address or landmark" value="Koramangala 5th Block, Bengaluru" required>
+                </div>
+              </div>
+
+              <!-- Destination Field -->
+              <div class="form-group">
+                <label for="destination" class="form-label">Destination Location</label>
+                <div class="input-with-icon">
+                  <span class="input-icon drop-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </span>
+                  <input type="text" id="destination" name="destination" class="form-control" placeholder="Enter drop-off destination" value="Indiranagar 100ft Road, Bengaluru" required>
+                </div>
+              </div>
+
+              <!-- Vehicle Quick Select Radio Buttons -->
+              <div class="form-group">
+                <label class="form-label">Choose Ride Category</label>
+                <div class="vehicle-quick-selector">
+                  
+                  <div class="vehicle-pill-item">
+                    <input type="radio" id="quick-bike" name="vehicle_type" value="bike" checked>
+                    <label for="quick-bike" class="vehicle-pill-label">
+                      <span class="pill-icon">🏍️</span>
+                      <span class="pill-name">Bike</span>
+                      <span class="pill-fare">₹49 est.</span>
+                    </label>
+                  </div>
+
+                  <div class="vehicle-pill-item">
+                    <input type="radio" id="quick-auto" name="vehicle_type" value="auto">
+                    <label for="quick-auto" class="vehicle-pill-label">
+                      <span class="pill-icon">🛺</span>
+                      <span class="pill-name">Auto</span>
+                      <span class="pill-fare">₹85 est.</span>
+                    </label>
+                  </div>
+
+                  <div class="vehicle-pill-item">
+                    <input type="radio" id="quick-sedan" name="vehicle_type" value="sedan">
+                    <label for="quick-sedan" class="vehicle-pill-label">
+                      <span class="pill-icon">🚗</span>
+                      <span class="pill-name">Sedan</span>
+                      <span class="pill-fare">₹169 est.</span>
+                    </label>
+                  </div>
+
+                  <div class="vehicle-pill-item">
+                    <input type="radio" id="quick-suv" name="vehicle_type" value="suv">
+                    <label for="quick-suv" class="vehicle-pill-label">
+                      <span class="pill-icon">🚙</span>
+                      <span class="pill-name">SUV XL</span>
+                      <span class="pill-fare">₹249 est.</span>
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Submit CTA Button -->
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Book Your Ride Now</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Dispatch Visual Mockup -->
+        <div class="hero-visual">
+          <div class="hero-interactive-card">
+            
+            <div class="mock-map-header">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Live Dispatch Mockup</span>
+                <h3 style="font-size: 1.1rem; color: #FFFFFF; font-weight: 800;">Ride En Route</h3>
+              </div>
+              <span class="eta-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 10"></polyline>
+                </svg>
+                Arriving in 3 mins
+              </span>
+            </div>
+
+            <!-- Stylized Route Visual -->
+            <div class="mock-map-visual">
+              <div class="mock-route-line"></div>
+              
+              <div class="mock-pin mock-pin-pickup" title="Pickup Point">P</div>
+              <div class="mock-car-marker" title="Driver Location">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#05D374" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                  <circle cx="7" cy="17" r="2"></circle>
+                  <circle cx="17" cy="17" r="2"></circle>
+                </svg>
+              </div>
+              <div class="mock-pin mock-pin-drop" title="Drop Point">D</div>
+            </div>
+
+            <!-- Driver & OTP Strip -->
+            <div class="driver-detail-strip">
+              <div class="driver-info">
+                <div class="driver-avatar">RK</div>
+                <div>
+                  <div class="driver-name">Rajesh Kumar</div>
+                  <div class="driver-rating">★ 4.9 &bull; Honda City (KA-01-MJ-4021)</div>
+                </div>
+              </div>
+              <div class="otp-box">
+                <div class="otp-label">Start PIN</div>
+                <div class="otp-value">7492</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. TRUST & STATS STRIP
+         ======================================================================== -->
+    <section class="stats-strip" aria-label="Key Performance Statistics">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">15M+</span>
+          <span class="stat-label">Rides Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.9★</span>
+          <span class="stat-label">Average App Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2-4 Min</span>
+          <span class="stat-label">Average Pickup Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Verified &amp; Insured Fleet</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. VEHICLE CATEGORIES SECTION
+         ======================================================================== -->
+    <section class="section" id="vehicles" aria-labelledby="vehicles-title">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-tag">Our Diverse Fleet</span>
+          <h2 id="vehicles-title" class="section-title">Designed for Every Kind of Journey</h2>
+          <p class="section-subtitle">
+            Whether you need a swift solo commute, an economical local ride, or premium executive comfort, GoRide has the right vehicle for you.
+          </p>
+        </div>
+
+        <div class="vehicles-grid">
+          
+          <!-- Category 1: Bike -->
+          <article class="vehicle-card">
+            <span class="vehicle-badge-pill">Fastest Solo</span>
+            <div class="vehicle-image-wrap">
+              <img src="assets/images/bike.svg" alt="GoRide Bike Taxi Vector" width="180" height="110" loading="lazy">
+            </div>
+            <div class="vehicle-header-info">
+              <h3 class="vehicle-name">GoRide Bike</h3>
+              <span class="vehicle-capacity">👤 1 Seat</span>
+            </div>
+            <p class="vehicle-tagline">Beat city gridlock effortlessly. Perfect for solo office commutes and quick errands.</p>
+            <ul class="vehicle-features-list">
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Sanitized helmet provided</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Lowest fare per kilometer</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Real-time live tracking</li>
+            </ul>
+            <div class="vehicle-footer-row">
+              <div class="fare-block">
+                <span class="fare-caption">Starting from</span>
+                <span class="fare-amount">₹39</span>
+              </div>
+              <a href="booking.html?type=bike" class="btn btn-secondary btn-sm">Book Bike</a>
+            </div>
+          </article>
+
+          <!-- Category 2: Auto -->
+          <article class="vehicle-card">
+            <span class="vehicle-badge-pill">Budget Favorite</span>
+            <div class="vehicle-image-wrap">
+              <img src="assets/images/auto.svg" alt="GoRide Auto Rickshaw Vector" width="180" height="110" loading="lazy">
+            </div>
+            <div class="vehicle-header-info">
+              <h3 class="vehicle-name">GoRide Auto</h3>
+              <span class="vehicle-capacity">👥 Up to 3</span>
+            </div>
+            <p class="vehicle-tagline">The iconic urban ride. Doorstep pickup without meter bargaining or cancellations.</p>
+            <ul class="vehicle-features-list">
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Doorstep pickup convenience</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Transparent metered rates</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Room for small bags &amp; groceries</li>
+            </ul>
+            <div class="vehicle-footer-row">
+              <div class="fare-block">
+                <span class="fare-caption">Starting from</span>
+                <span class="fare-amount">₹69</span>
+              </div>
+              <a href="booking.html?type=auto" class="btn btn-secondary btn-sm">Book Auto</a>
+            </div>
+          </article>
+
+          <!-- Category 3: Sedan (Featured) -->
+          <article class="vehicle-card featured-card">
+            <span class="vehicle-badge-pill">Most Popular</span>
+            <div class="vehicle-image-wrap">
+              <img src="assets/images/sedan.svg" alt="GoRide Sedan Car Vector" width="190" height="110" loading="lazy">
+            </div>
+            <div class="vehicle-header-info">
+              <h3 class="vehicle-name">GoRide Sedan</h3>
+              <span class="vehicle-capacity">👥 4 Seats</span>
+            </div>
+            <p class="vehicle-tagline">Air-conditioned comfort with generous legroom. Ideal for client meetings and daily commutes.</p>
+            <ul class="vehicle-features-list">
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Temperature-controlled AC</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Highly rated top driver-partners</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Ample boot space for 2 luggage bags</li>
+            </ul>
+            <div class="vehicle-footer-row">
+              <div class="fare-block">
+                <span class="fare-caption">Starting from</span>
+                <span class="fare-amount">₹149</span>
+              </div>
+              <a href="booking.html?type=sedan" class="btn btn-primary btn-sm">Book Sedan</a>
+            </div>
+          </article>
+
+          <!-- Category 4: SUV -->
+          <article class="vehicle-card">
+            <span class="vehicle-badge-pill">Extra Spacious</span>
+            <div class="vehicle-image-wrap">
+              <img src="assets/images/suv.svg" alt="GoRide SUV Vehicle Vector" width="190" height="110" loading="lazy">
+            </div>
+            <div class="vehicle-header-info">
+              <h3 class="vehicle-name">GoRide SUV XL</h3>
+              <span class="vehicle-capacity">👥 Up to 6</span>
+            </div>
+            <p class="vehicle-tagline">Extra seating and massive luggage capacity. Perfect for airport runs and family vacations.</p>
+            <ul class="vehicle-features-list">
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> 6 comfortable passenger seats</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Fits 4+ large suitcases</li>
+              <li class="vehicle-feature-item"><span class="feature-check">✓</span> Smooth suspension on highways</li>
+            </ul>
+            <div class="vehicle-footer-row">
+              <div class="fare-block">
+                <span class="fare-caption">Starting from</span>
+                <span class="fare-amount">₹229</span>
+              </div>
+              <a href="booking.html?type=suv" class="btn btn-secondary btn-sm">Book SUV</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-2xl);">
+          <a href="rides.html" class="btn btn-secondary">
+            <span>Explore Full Fleet &amp; Specifications</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. HOW IT WORKS SECTION
+         ======================================================================== -->
+    <section class="section section-dark" id="how-it-works" aria-labelledby="hiw-title">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-tag badge-tag-dark">Effortless Commute</span>
+          <h2 id="hiw-title" class="section-title">How GoRide Works in 4 Simple Steps</h2>
+          <p class="section-subtitle">
+            Booking your ride is intuitive, transparent, and takes less than 30 seconds from start to confirmation.
+          </p>
+        </div>
+
+        <div class="how-it-works-grid">
+          
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number-badge">01</div>
+            <div class="step-icon-wrap">📍</div>
+            <h3 class="step-title">Enter Route</h3>
+            <p class="step-desc">Type your pickup point and destination to immediately see accurate distance and route previews.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number-badge">02</div>
+            <div class="step-icon-wrap">🚖</div>
+            <h3 class="step-title">Choose Vehicle</h3>
+            <p class="step-desc">Compare Bike, Auto, Sedan, and SUV options with upfront, guaranteed prices with zero hidden fees.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number-badge">03</div>
+            <div class="step-icon-wrap">🔒</div>
+            <h3 class="step-title">Match with Driver</h3>
+            <p class="step-desc">Get matched with the nearest verified driver. Verify vehicle license number and share your 4-digit PIN.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number-badge">04</div>
+            <div class="step-icon-wrap">✨</div>
+            <h3 class="step-title">Ride &amp; Pay Cashless</h3>
+            <p class="step-desc">Sit back, enjoy a secure ride, and pay seamlessly via UPI, credit/debit card, or cash at journey end.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. WHY CHOOSE GORIDE SECTION
+         ======================================================================== -->
+    <section class="section" id="why-us" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-tag">The GoRide Advantage</span>
+          <h2 id="why-title" class="section-title">Why Millions Choose GoRide Daily</h2>
+          <p class="section-subtitle">
+            We engineered our platform around reliability, driver fairness, and rider peace of mind.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          
+          <div class="benefit-card">
+            <div class="benefit-icon-box">🏷️</div>
+            <h3 class="benefit-title">Zero Surge Surprises</h3>
+            <p class="benefit-text">What you see is what you pay. Transparent upfront fares locked prior to booking ensure zero shock surges at journey end.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-box">🛡️</div>
+            <h3 class="benefit-title">100% Background-Checked</h3>
+            <p class="benefit-text">Every GoRide driver-partner undergoes criminal background verification, document audits, and vehicle safety inspections.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-box">⚡</div>
+            <h3 class="benefit-title">Sub-3 Minute Pickups</h3>
+            <p class="benefit-text">Our hyper-local dispatch algorithm routes your request to nearby drivers, slashing wait times even during rush hours.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-box">🌱</div>
+            <h3 class="benefit-title">Eco-Friendly Fleet</h3>
+            <p class="benefit-text">Our rapidly growing fleet of electric bikes and EV sedans has already saved over 1,200 tons of city carbon emissions.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. SAFETY FIRST SECTION
+         ======================================================================== -->
+    <section class="section section-dark" id="safety" aria-labelledby="safety-title">
+      <div class="container">
+        <div class="safety-wrapper">
+          
+          <div>
+            <span class="badge-tag badge-tag-dark">Safety Uncompromised</span>
+            <h2 id="safety-title" class="section-title" style="color: #FFFFFF;">Your Protection is Built Into Every Mile</h2>
+            <p class="section-subtitle" style="margin-bottom: var(--space-xl);">
+              From 24x7 control center tracking to instant emergency escalation, we hold safety to the highest modern standard.
+            </p>
+
+            <div class="safety-features-list">
+              
+              <div class="safety-feature-item">
+                <div class="safety-icon-circle">SOS</div>
+                <div class="safety-feature-content">
+                  <h4>In-App SOS Emergency</h4>
+                  <p>One-touch connection to local emergency responders and our dedicated 24x7 safety desk.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon-circle">PIN</div>
+                <div class="safety-feature-content">
+                  <h4>4-Digit Secure PIN</h4>
+                  <p>Drivers cannot start the ride until you provide your unique ride authorization code.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon-circle">GPS</div>
+                <div class="safety-feature-content">
+                  <h4>Live Route Sharing</h4>
+                  <p>Share live trip progress and estimated arrival time with your trusted family and friends.</p>
+                </div>
+              </div>
+
+              <div class="safety-feature-item">
+                <div class="safety-icon-circle">24/7</div>
+                <div class="safety-feature-content">
+                  <h4>Safety Response Command</h4>
+                  <p>Specialized team monitoring route deviations, unexpected stops, and late-night trips.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Safety Graphic Card -->
+          <div class="safety-card-visual">
+            <img src="assets/images/safety-shield.svg" alt="GoRide Safety Shield Graphic" class="safety-shield-graphic" width="90" height="90" loading="lazy">
+            <h3 class="safety-card-title">GoRide Safety Shield</h3>
+            <p class="safety-card-desc">Every trip is insured up to ₹5,00,000 for rider and driver partner protection.</p>
+            <a href="about.html#safety-charter" class="btn btn-outline-light btn-sm">Read Safety Charter</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. CUSTOMER TESTIMONIALS SECTION
+         ======================================================================== -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-tag">Rider Stories</span>
+          <h2 id="testimonials-title" class="section-title">Loved by Commuters Across the City</h2>
+          <p class="section-subtitle">
+            See how everyday commuters, working professionals, and families rely on GoRide.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          
+          <article class="testimonial-card">
+            <div>
+              <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="quote-text">
+                "The GoRide Bike option saves me 35 minutes in silk board traffic every single morning. The drivers always have a spare sanitized helmet and arrive in under 3 minutes."
+              </blockquote>
+            </div>
+            <div class="rider-profile">
+              <div class="rider-avatar">PS</div>
+              <div class="rider-info">
+                <span class="rider-name">Priya Sharma</span>
+                <span class="rider-meta">Daily Commuter &bull; 140+ Rides</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="quote-text">
+                "As an IT consultant, quiet and comfortable travel between client meetings is crucial. GoRide Sedan offers clean AC cars, courteous drivers, and guaranteed upfront pricing."
+              </blockquote>
+            </div>
+            <div class="rider-profile">
+              <div class="rider-avatar">AP</div>
+              <div class="rider-info">
+                <span class="rider-name">Arjun Patel</span>
+                <span class="rider-meta">Tech Consultant &bull; 85+ Rides</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote class="quote-text">
+                "Booking the GoRide SUV XL for our family's early morning airport trip with 4 huge suitcases was effortless. The car arrived 5 minutes early, spotless and spacious."
+              </blockquote>
+            </div>
+            <div class="rider-profile">
+              <div class="rider-avatar">VI</div>
+              <div class="rider-info">
+                <span class="rider-name">Vikram &amp; Ananya Iyer</span>
+                <span class="rider-meta">Frequent Travelers &bull; 62+ Rides</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         9. APP DOWNLOAD & PROMO CTA BANNER
+         ======================================================================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          
+          <div class="cta-banner-content">
+            <h2>Download GoRide &amp; Get 20% Off</h2>
+            <p>
+              Use promo code <strong style="text-decoration: underline;">GORIDE20</strong> on your first booking. Available now on iOS and Android platforms.
+            </p>
+            <div class="store-buttons">
+              <!-- App Store Button -->
+              <a href="#" class="store-btn" aria-label="Download on Apple App Store">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.8c.63-.78 1.06-1.87.94-2.96-.92.04-2.02.62-2.67 1.39-.58.67-1.09 1.77-.96 2.82 1.03.08 2.06-.47 2.69-1.25z"/>
+                </svg>
+                <div class="store-btn-text">
+                  <span class="store-sub">Download on the</span>
+                  <span class="store-main">App Store</span>
+                </div>
+              </a>
+
+              <!-- Google Play Button -->
+              <a href="#" class="store-btn" aria-label="Get it on Google Play Store">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.6 1.7l11.4 11.4-11.4 11.4c-.4-.4-.6-1-.6-1.7V3.4c0-.7.2-1.3.6-1.7zm13.1 13.1l2.5 1.5c1 .6 1.8.1 1.8-1V8.7c0-1.1-.8-1.6-1.8-1l-2.5 1.5-2.7 2.7 2.7 2.9zm-2 2l-3.3-3.3-8.6 8.6c.4.1.9.1 1.4-.2l10.5-6.1zm-3.3-5.3l3.3-3.3-10.5-6.1c-.5-.3-1-.3-1.4-.2l8.6 8.6z"/>
+                </svg>
+                <div class="store-btn-text">
+                  <span class="store-sub">Get it on</span>
+                  <span class="store-main">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Stylized QR Code Demonstration Box -->
+          <div class="cta-qr-box">
+            <div class="qr-placeholder" aria-label="Sample QR Code">
+              <svg viewBox="0 0 100 100" fill="#FFFFFF">
+                <rect x="5" y="5" width="30" height="30" rx="3"/>
+                <rect x="11" y="11" width="18" height="18" fill="#0B0F19"/>
+                <rect x="15" y="15" width="10" height="10" fill="#FFFFFF"/>
+                <rect x="65" y="5" width="30" height="30" rx="3"/>
+                <rect x="71" y="11" width="18" height="18" fill="#0B0F19"/>
+                <rect x="75" y="15" width="10" height="10" fill="#FFFFFF"/>
+                <rect x="5" y="65" width="30" height="30" rx="3"/>
+                <rect x="11" y="71" width="18" height="18" fill="#0B0F19"/>
+                <rect x="15" y="75" width="10" height="10" fill="#FFFFFF"/>
+                <rect x="45" y="15" width="10" height="20"/>
+                <rect x="45" y="45" width="10" height="10"/>
+                <rect x="65" y="45" width="20" height="10"/>
+                <rect x="45" y="65" width="10" height="25"/>
+                <rect x="65" y="65" width="25" height="10"/>
+                <rect x="80" y="80" width="10" height="10"/>
+              </svg>
+            </div>
+            <span class="qr-caption">Scan to Install</span>
+          </div>
+
+        </div>
+
+        <!-- Educational Prototype Disclaimer -->
+        <div class="prototype-banner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <div>
+            <strong>Portfolio Project Notice:</strong> GoRide is a frontend portfolio prototype demonstrating semantic HTML5 &amp; modern CSS3. Live GPS tracking, payment gateway, and dynamic vehicle dispatch are simulated for educational demonstration.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       10. UNIVERSAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-symbol">G</div>
+            <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+          </a>
+          <p>
+            GoRide is an urban mobility platform built for safe, swift, and reliable transit across Indian cities. Designed with precision HTML5 &amp; CSS3.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--primary);">
+            Built for Skyppy Frontend Internship Portfolio
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book a Ride</a></li>
+            <li><a href="rides.html">Vehicle Fleet</a></li>
+            <li><a href="about.html">About GoRide</a></li>
+            <li><a href="contact.html">Support &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Vehicle Fleet Categories -->
+        <div>
+          <h4 class="footer-heading">Fleet Categories</h4>
+          <ul class="footer-links">
+            <li><a href="rides.html#bike">GoRide Bike Taxi</a></li>
+            <li><a href="rides.html#auto">GoRide Auto 3-Wheeler</a></li>
+            <li><a href="rides.html#sedan">GoRide City Sedan</a></li>
+            <li><a href="rides.html#suv">GoRide Family SUV</a></li>
+            <li><a href="rides.html#ev">GoRide Green EV</a></li>
+          </ul>
+        </div>
+
+        <!-- Safety & Legal -->
+        <div>
+          <h4 class="footer-heading">Trust &amp; Safety</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#safety">Safety Protocols</a></li>
+            <li><a href="about.html#drivers">Driver Verification</a></li>
+            <li><a href="contact.html#faq">Rider FAQ</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 GoRide Technologies Inc. Crafted for HTML5 &amp; CSS3 Developer Internship at Skyppy.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Security</a>
+          <a href="#">Privacy</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

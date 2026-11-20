@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore GoRide's complete vehicle fleet: Bike Taxis, Auto Rickshaws, Prime Sedans, Spacious SUVs, and Eco EVs with clear fares and specifications.">
+  <title>Vehicle Categories &amp; Fleet – GoRide</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .rides-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2xl);
+    }
+    .ride-detail-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+    .ride-detail-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(5, 211, 116, 0.4);
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-lg) 0;
+      font-size: 0.88rem;
+    }
+    .spec-table tr {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .spec-table td {
+      padding: 0.65rem 0;
+    }
+    .spec-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 40%;
+    }
+    .spec-table td:last-child {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    @media (max-width: 850px) {
+      .rides-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="GoRide Homepage">
+        <div class="logo-symbol">G</div>
+        <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation Menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="booking.html" class="nav-link">Book Ride</a></li>
+          <li><a href="rides.html" class="nav-link active">Vehicles</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Your Ride</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-tag badge-tag-dark">Fleet Portfolio</span>
+      <h1>Our Vehicle Fleet &amp; Classes</h1>
+      <p>Compare specifications, seating capacities, typical use cases, and sample fare breakdowns.</p>
+    </div>
+  </section>
+
+  <!-- Main Rides Section -->
+  <main class="section">
+    <div class="container">
+      
+      <div class="rides-detail-grid">
+        
+        <!-- Vehicle 1: Bike -->
+        <article class="ride-detail-card" id="bike">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+            <span class="badge-tag">Solo Commute</span>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);">Starting ₹39</span>
+          </div>
+          <div class="vehicle-image-wrap" style="height: 140px;">
+            <img src="assets/images/bike.svg" alt="GoRide Bike Taxi" width="200" height="120" loading="lazy">
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem;">GoRide Bike Taxi</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            The quickest and most affordable mode to slice through heavy city traffic during peak hours.
+          </p>
+          <table class="spec-table">
+            <tr>
+              <td>Capacity:</td>
+              <td>1 Passenger (Solo)</td>
+            </tr>
+            <tr>
+              <td>Best Used For:</td>
+              <td>Daily office rush, metro station connectivity, quick errands</td>
+            </tr>
+            <tr>
+              <td>Safety Gear:</td>
+              <td>Sanitized helmet and hair cap provided</td>
+            </tr>
+            <tr>
+              <td>Base / Distance Rate:</td>
+              <td>₹25 base + ₹8 / km (sample estimate)</td>
+            </tr>
+          </table>
+          <div style="margin-top: auto; display: flex; gap: var(--space-md);">
+            <a href="booking.html?type=bike" class="btn btn-primary btn-block">Book Bike Taxi</a>
+          </div>
+        </article>
+
+        <!-- Vehicle 2: Auto -->
+        <article class="ride-detail-card" id="auto">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+            <span class="badge-tag">Local Convenience</span>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);">Starting ₹69</span>
+          </div>
+          <div class="vehicle-image-wrap" style="height: 140px;">
+            <img src="assets/images/auto.svg" alt="GoRide Auto Rickshaw" width="200" height="120" loading="lazy">
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem;">GoRide Auto Rickshaw</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            The classic Indian urban commuter. Get picked up right at your doorstep with zero meter haggling.
+          </p>
+          <table class="spec-table">
+            <tr>
+              <td>Capacity:</td>
+              <td>Up to 3 Passengers</td>
+            </tr>
+            <tr>
+              <td>Best Used For:</td>
+              <td>Local market runs, neighborhood errands, budget travel</td>
+            </tr>
+            <tr>
+              <td>Luggage:</td>
+              <td>Fits shopping bags and medium backpacks</td>
+            </tr>
+            <tr>
+              <td>Base / Distance Rate:</td>
+              <td>₹40 base + ₹12 / km (sample estimate)</td>
+            </tr>
+          </table>
+          <div style="margin-top: auto; display: flex; gap: var(--space-md);">
+            <a href="booking.html?type=auto" class="btn btn-primary btn-block">Book Auto</a>
+          </div>
+        </article>
+
+        <!-- Vehicle 3: Sedan -->
+        <article class="ride-detail-card" id="sedan" style="border: 2px solid var(--primary);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+            <span class="badge-tag" style="background: var(--primary); color: #0B0F19;">Comfort Leader</span>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);">Starting ₹149</span>
+          </div>
+          <div class="vehicle-image-wrap" style="height: 140px;">
+            <img src="assets/images/sedan.svg" alt="GoRide Sedan Car" width="220" height="110" loading="lazy">
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem;">GoRide City Sedan</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Smooth air-conditioned cabs driven by top-rated partners. Designed for productive travel and leisure.
+          </p>
+          <table class="spec-table">
+            <tr>
+              <td>Capacity:</td>
+              <td>4 Passengers + Driver</td>
+            </tr>
+            <tr>
+              <td>Best Used For:</td>
+              <td>Office commutes, client visits, dining out, doctor trips</td>
+            </tr>
+            <tr>
+              <td>Amenities:</td>
+              <td>AC climate control, quiet cabin, 2 large luggage bags</td>
+            </tr>
+            <tr>
+              <td>Base / Distance Rate:</td>
+              <td>₹60 base + ₹16 / km (sample estimate)</td>
+            </tr>
+          </table>
+          <div style="margin-top: auto; display: flex; gap: var(--space-md);">
+            <a href="booking.html?type=sedan" class="btn btn-primary btn-block">Book Sedan</a>
+          </div>
+        </article>
+
+        <!-- Vehicle 4: SUV -->
+        <article class="ride-detail-card" id="suv">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+            <span class="badge-tag">Spacious XL</span>
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);">Starting ₹229</span>
+          </div>
+          <div class="vehicle-image-wrap" style="height: 140px;">
+            <img src="assets/images/suv.svg" alt="GoRide SUV XL" width="220" height="115" loading="lazy">
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem;">GoRide SUV XL</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            High-clearance, 6-seater premium SUVs with massive luggage capacity for group and airport transit.
+          </p>
+          <table class="spec-table">
+            <tr>
+              <td>Capacity:</td>
+              <td>6 Passengers + Driver</td>
+            </tr>
+            <tr>
+              <td>Best Used For:</td>
+              <td>Airport transfers, family outings, outstation weekend trips</td>
+            </tr>
+            <tr>
+              <td>Luggage:</td>
+              <td>Fits 4+ large suitcases and travel gear</td>
+            </tr>
+            <tr>
+              <td>Base / Distance Rate:</td>
+              <td>₹90 base + ₹22 / km (sample estimate)</td>
+            </tr>
+          </table>
+          <div style="margin-top: auto; display: flex; gap: var(--space-md);">
+            <a href="booking.html?type=suv" class="btn btn-primary btn-block">Book SUV XL</a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 GoRide Technologies Inc. Portfolio prototype for Skyppy internship.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="booking.html">Booking</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

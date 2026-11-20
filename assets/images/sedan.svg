@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 110" width="220" height="110" fill="none">
+  <!-- Modern Sedan Car Vector -->
+  <defs>
+    <linearGradient id="sedanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#05D374"/>
+      <stop offset="60%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <!-- Road shadow -->
+  <ellipse cx="110" cy="100" rx="98" ry="6" fill="#0B0F19" fill-opacity="0.12"/>
+  <!-- Rear Wheel -->
+  <circle cx="56" cy="80" r="20" stroke="#0F172A" stroke-width="6" fill="#E2E8F0"/>
+  <circle cx="56" cy="80" r="11" stroke="#475569" stroke-width="2" fill="#0F172A"/>
+  <circle cx="56" cy="80" r="4" fill="#05D374"/>
+  <!-- Front Wheel -->
+  <circle cx="164" cy="80" r="20" stroke="#0F172A" stroke-width="6" fill="#E2E8F0"/>
+  <circle cx="164" cy="80" r="11" stroke="#475569" stroke-width="2" fill="#0F172A"/>
+  <circle cx="164" cy="80" r="4" fill="#05D374"/>
+  <!-- Main Car Body Silhouette -->
+  <path d="M22 75C22 70 28 66 38 66L50 65C58 46 76 34 104 32L146 32C162 32 174 42 184 56L196 60C206 63 210 68 210 74C210 78 206 82 200 82H184C182 72 172 65 162 65C152 65 142 72 140 82H80C78 72 68 65 58 65C48 65 38 72 36 82H26C23 82 22 79 22 75Z" fill="url(#sedanGrad)"/>
+  <!-- Windows -->
+  <path d="M72 60L82 40H112V60H72Z" fill="#E0F2FE" fill-opacity="0.9" stroke="#0284C7" stroke-width="1.5"/>
+  <path d="M118 40H144C155 40 162 46 168 60H118V40Z" fill="#E0F2FE" fill-opacity="0.9" stroke="#0284C7" stroke-width="1.5"/>
+  <!-- Door lines & handle -->
+  <path d="M115 40V78" stroke="#047857" stroke-width="1.5"/>
+  <rect x="94" y="64" width="10" height="2.5" rx="1" fill="#065F46"/>
+  <rect x="126" y="64" width="10" height="2.5" rx="1" fill="#065F46"/>
+  <!-- Headlight & Taillight -->
+  <path d="M204 68L210 72H202L204 68Z" fill="#FDE047"/>
+  <path d="M22 68L26 72H22V68Z" fill="#EF4444"/>
+</svg>

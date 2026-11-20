@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the GoRide support team. Read answers to common questions about ride booking, lost items, fares, and safety.">
+  <title>Contact &amp; Rider Support – GoRide</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: start;
+      margin-bottom: var(--space-3xl);
+    }
+    .contact-box {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-sm);
+    }
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+    }
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    /* Semantic Pure CSS FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-fast);
+    }
+    .faq-item[open] {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+    .faq-question {
+      padding: var(--space-lg);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .faq-question::-webkit-details-marker {
+      display: none;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      transition: transform var(--transition-fast);
+      font-weight: 800;
+    }
+    .faq-item[open] .faq-question::after {
+      content: '−';
+      transform: rotate(0deg);
+      color: var(--accent-red);
+    }
+    .faq-answer {
+      padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 850px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="GoRide Homepage">
+        <div class="logo-symbol">G</div>
+        <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation Menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="booking.html" class="nav-link">Book Ride</a></li>
+          <li><a href="rides.html" class="nav-link">Vehicles</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Your Ride</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-tag badge-tag-dark">24/7 Support</span>
+      <h1>How Can We Help You?</h1>
+      <p>Reach out to our customer care team or find instant answers to common rider questions.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <main class="section">
+    <div class="container">
+      
+      <div class="contact-layout">
+        
+        <!-- Contact Form -->
+        <div class="contact-box">
+          <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: var(--space-md); color: var(--text-main);">
+            Send Us a Message
+          </h2>
+          <form action="#" method="POST" class="booking-form" onsubmit="event.preventDefault(); alert('Demo Notice: This is a frontend prototype. Message received in static state.');">
+            <div class="form-group">
+              <label for="c-name" class="form-label" style="color: var(--text-main);">Your Full Name</label>
+              <input type="text" id="c-name" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light); padding-left: 1rem;" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="c-email" class="form-label" style="color: var(--text-main);">Email Address</label>
+              <input type="email" id="c-email" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light); padding-left: 1rem;" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="c-phone" class="form-label" style="color: var(--text-main);">Mobile Number</label>
+              <input type="tel" id="c-phone" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light); padding-left: 1rem;" placeholder="+91 98765 43210" required>
+            </div>
+
+            <div class="form-group">
+              <label for="c-topic" class="form-label" style="color: var(--text-main);">Inquiry Topic</label>
+              <select id="c-topic" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light); padding-left: 1rem;">
+                <option value="booking">Ride Booking Question</option>
+                <option value="lost_item">Lost &amp; Found Item</option>
+                <option value="driver">Driver Partner Inquiry</option>
+                <option value="billing">Billing &amp; Fare Dispute</option>
+                <option value="feedback">General Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="c-message" class="form-label" style="color: var(--text-main);">Your Message</label>
+              <textarea id="c-message" rows="4" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light); padding: 0.85rem 1rem;" placeholder="Please describe how we can assist you..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: var(--space-sm);">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information Details -->
+        <div>
+          <span class="badge-tag">Direct Channels</span>
+          <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: var(--space-md); color: var(--text-main);">
+            We Are Always Here For You
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: var(--space-xl); line-height: 1.6;">
+            Our safety and rider support operations run 24 hours a day, 7 days a week across major hubs.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">National Headquarters</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                  GoRide Mobility Tower, 4th Cross, Koramangala 4th Block, Bengaluru, Karnataka 560034
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">Customer Helpline</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                  1800-425-GORIDE (Toll-Free, 24x7)
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">Email Support</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                  support@goride.example.app &bull; safety@goride.example.app
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">⏱️</div>
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main);">Safety Escalation Desk</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                  Active 24 hours daily with dedicated SOS response teams.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ Section (Pure Semantic HTML5 Accordion) -->
+      <section id="faq" style="margin-top: var(--space-3xl);" aria-labelledby="faq-title">
+        <div class="section-title-wrap">
+          <span class="badge-tag">Got Questions?</span>
+          <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Find quick answers regarding our booking process, fares, and safety policies.</p>
+        </div>
+
+        <div class="faq-list">
+          
+          <details class="faq-item" open>
+            <summary class="faq-question">How are GoRide fares calculated?</summary>
+            <div class="faq-answer">
+              GoRide uses transparent, upfront pricing. Our system calculates fares based on estimated journey distance, typical traffic conditions, and vehicle category. You see your exact price prior to confirming, with no surge surprises at the end of the trip.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the 4-digit Ride PIN for?</summary>
+            <div class="faq-answer">
+              Every GoRide booking generates a unique 4-digit security PIN. You must verbally share this PIN with your driver upon boarding. The driver's application will not start the meter or trip without this verification, guaranteeing you are in the correct authorized vehicle.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I cancel my ride booking?</summary>
+            <div class="faq-answer">
+              Yes, rides can be cancelled free of charge within 2 minutes of driver assignment. After 2 minutes, a nominal cancellation fee applies to fairly compensate the driver partner who has already navigated toward your pickup location.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What safety measures are in place during late-night rides?</summary>
+            <div class="faq-answer">
+              All rides are monitored in real time by our Safety Command Center. Riders can utilize our 1-touch SOS emergency button, share live GPS trips with family, and benefit from 100% background-verified driver partners.
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 GoRide Technologies Inc. Portfolio prototype for Skyppy internship.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="booking.html">Booking</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

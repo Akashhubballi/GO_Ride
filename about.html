@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about GoRide - our mission, vision, safety commitment, and team powering affordable, sustainable urban mobility.">
+  <title>About Us – GoRide Mobility Platform</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+      margin-bottom: var(--space-3xl);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+    .mission-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl) var(--space-xl);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .mission-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-lg);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto var(--space-md) auto;
+    }
+    @media (max-width: 900px) {
+      .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="GoRide Homepage">
+        <div class="logo-symbol">G</div>
+        <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation Menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="booking.html" class="nav-link">Book Ride</a></li>
+          <li><a href="rides.html" class="nav-link">Vehicles</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Your Ride</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-tag badge-tag-dark">Our Journey</span>
+      <h1>Empowering Seamless Urban Movement</h1>
+      <p>GoRide was created to eliminate city traffic friction through transparent technology, verified drivers, and accessible multi-modal transport.</p>
+    </div>
+  </section>
+
+  <!-- Main Story Content -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Company Story & Visual -->
+      <div class="about-story-grid">
+        <div>
+          <span class="badge-tag">Company Background</span>
+          <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: var(--space-md); color: var(--text-main);">
+            Pioneering Safe &amp; Dependable Rides for Modern India
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: var(--space-md); line-height: 1.7;">
+            Founded with the conviction that getting from point A to point B should never involve unexpected price surges, driver cancellations, or safety worries, GoRide connects commuters with thousands of verified independent driver-partners.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.7;">
+            By integrating bike taxis for traffic dodging, auto rickshaws for quick doorstep accessibility, and premium sedans and SUVs for family comfort, GoRide serves every transit need within one unified interface.
+          </p>
+        </div>
+
+        <div style="background: var(--surface-dark-card); border: 1px solid var(--border-dark); border-radius: var(--radius-xl); padding: var(--space-2xl); color: #FFFFFF;">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: var(--space-md); color: var(--primary);">
+            Our Core Principles
+          </h3>
+          <ul style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <li style="display: flex; gap: var(--space-sm);">
+              <span style="color: var(--primary); font-weight: bold;">01.</span>
+              <div>
+                <strong>Predictable Upfront Fares:</strong> No surge spikes when you step out into the rain. Fares are locked prior to trip confirmation.
+              </div>
+            </li>
+            <li style="display: flex; gap: var(--space-sm);">
+              <span style="color: var(--primary); font-weight: bold;">02.</span>
+              <div>
+                <strong>Uncompromised Rider &amp; Driver Safety:</strong> In-app SOS, background-checked partners, and live telemetry tracking.
+              </div>
+            </li>
+            <li style="display: flex; gap: var(--space-sm);">
+              <span style="color: var(--primary); font-weight: bold;">03.</span>
+              <div>
+                <strong>Sustainability by Design:</strong> Actively transitioning 40% of our fleet to electric vehicles by 2027.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mission & Vision Cards -->
+      <div class="section-title-wrap">
+        <span class="badge-tag">Guiding North Star</span>
+        <h2 class="section-title">Mission, Vision &amp; Values</h2>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon">🎯</div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: var(--space-sm);">Our Mission</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            To make urban transportation in every city fast, respectful, affordable, and safe for every rider and driver-partner.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-icon">🔭</div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: var(--space-sm);">Our Vision</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            To build India's premier carbon-neutral mobility grid that saves 100 million collective commute hours every year.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-icon">🤝</div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: var(--space-sm);">Partner First</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Treating driver-partners with dignity through industry-leading commission models, daily payouts, and family health benefits.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 GoRide Technologies Inc. Portfolio prototype for Skyppy internship.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="booking.html">Booking</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

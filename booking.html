@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your GoRide online. Choose from Bike, Auto, Sedan, and SUV with instant upfront fare estimates.">
+  <title>Book Your Ride – GoRide Online Booking</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Specific Booking Page Refinements */
+    .booking-grid-wrapper {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+    .booking-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-sm);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+    .booking-vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-xs);
+    }
+    .select-card-radio {
+      position: absolute;
+      opacity: 0;
+    }
+    .select-card-label {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: var(--surface-white);
+    }
+    .select-card-label:hover {
+      border-color: #94A3B8;
+      background: var(--surface-muted);
+    }
+    .select-card-radio:checked + .select-card-label {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .ride-opt-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+    .ride-opt-name {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+    .ride-opt-fare {
+      font-weight: 800;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+    }
+    .ride-opt-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .summary-card {
+      background: var(--surface-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      color: #FFFFFF;
+      position: sticky;
+      top: calc(var(--header-height) + 20px);
+    }
+    .summary-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    .summary-item strong {
+      color: #FFFFFF;
+    }
+    .summary-total {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px dashed var(--border-dark);
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    @media (max-width: 900px) {
+      .booking-grid-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .booking-vehicle-grid {
+        grid-template-columns: 1fr;
+      }
+      .summary-card {
+        position: static;
+      }
+    }
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .booking-card {
+        padding: var(--space-md);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="GoRide Homepage">
+        <div class="logo-symbol">G</div>
+        <span class="logo-text">Go<span class="logo-accent">Ride</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation Menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="booking.html" class="nav-link active">Book Ride</a></li>
+          <li><a href="rides.html" class="nav-link">Vehicles</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Your Ride</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-tag badge-tag-dark">Fast Dispatch</span>
+      <h1>Book Your GoRide</h1>
+      <p>Configure your route, select your preferred ride class, and see transparent fare estimates.</p>
+    </div>
+  </section>
+
+  <!-- Booking Main Content -->
+  <main class="section">
+    <div class="container">
+      <div class="booking-grid-wrapper">
+        
+        <!-- Left Column: Booking Form -->
+        <div class="booking-card">
+          <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: var(--space-md); color: var(--text-main);">
+            Trip Details &amp; Vehicle Selection
+          </h2>
+
+          <form action="#" method="POST" class="booking-form" onsubmit="event.preventDefault(); alert('Demo Notice: This is a frontend prototype. In a live system, your ride would now be dispatched to drivers.');">
+            
+            <!-- Pickup -->
+            <div class="form-group">
+              <label for="b-pickup" class="form-label" style="color: var(--text-main);">Pickup Address</label>
+              <div class="input-with-icon">
+                <span class="input-icon pickup-icon">📍</span>
+                <input type="text" id="b-pickup" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);" value="Koramangala 5th Block, Bengaluru" required>
+              </div>
+            </div>
+
+            <!-- Destination -->
+            <div class="form-group">
+              <label for="b-dest" class="form-label" style="color: var(--text-main);">Destination Address</label>
+              <div class="input-with-icon">
+                <span class="input-icon drop-icon">🎯</span>
+                <input type="text" id="b-dest" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);" value="Indiranagar 100ft Road, Bengaluru" required>
+              </div>
+            </div>
+
+            <!-- Date, Time, Passengers Row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="b-date" class="form-label" style="color: var(--text-main);">Ride Date</label>
+                <input type="date" id="b-date" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);" value="2026-11-20" required>
+              </div>
+              <div class="form-group">
+                <label for="b-time" class="form-label" style="color: var(--text-main);">Pickup Time</label>
+                <input type="time" id="b-time" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);" value="15:30" required>
+              </div>
+            </div>
+
+            <!-- Passenger Count & Luggage -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="b-passengers" class="form-label" style="color: var(--text-main);">Passenger Count</label>
+                <select id="b-passengers" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);">
+                  <option value="1">1 Passenger (Solo)</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4" selected>4 Passengers (Group)</option>
+                  <option value="6">5-6 Passengers (XL)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="b-luggage" class="form-label" style="color: var(--text-main);">Luggage Items</label>
+                <select id="b-luggage" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);">
+                  <option value="none">No Luggage / Small Backpack</option>
+                  <option value="1-2" selected>1-2 Medium Bags</option>
+                  <option value="3+">3+ Heavy Bags (SUV Recommended)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Vehicle Selection Cards -->
+            <div class="form-group" style="margin-top: var(--space-sm);">
+              <label class="form-label" style="color: var(--text-main);">Select Vehicle Class</label>
+              <div class="booking-vehicle-grid">
+                
+                <!-- Bike -->
+                <div style="position: relative;">
+                  <input type="radio" id="v-bike" name="booking_vehicle" value="bike" class="select-card-radio">
+                  <label for="v-bike" class="select-card-label">
+                    <div class="ride-opt-top">
+                      <span class="ride-opt-name">🏍️ GoRide Bike</span>
+                      <span class="ride-opt-fare">₹49</span>
+                    </div>
+                    <span class="ride-opt-meta">Fastest through traffic &bull; 1 seat &bull; 2 min away</span>
+                  </label>
+                </div>
+
+                <!-- Auto -->
+                <div style="position: relative;">
+                  <input type="radio" id="v-auto" name="booking_vehicle" value="auto" class="select-card-radio">
+                  <label for="v-auto" class="select-card-label">
+                    <div class="ride-opt-top">
+                      <span class="ride-opt-name">🛺 GoRide Auto</span>
+                      <span class="ride-opt-fare">₹85</span>
+                    </div>
+                    <span class="ride-opt-meta">Pocket friendly &bull; Up to 3 seats &bull; 3 min away</span>
+                  </label>
+                </div>
+
+                <!-- Sedan -->
+                <div style="position: relative;">
+                  <input type="radio" id="v-sedan" name="booking_vehicle" value="sedan" class="select-card-radio" checked>
+                  <label for="v-sedan" class="select-card-label">
+                    <div class="ride-opt-top">
+                      <span class="ride-opt-name">🚗 GoRide Sedan</span>
+                      <span class="ride-opt-fare">₹169</span>
+                    </div>
+                    <span class="ride-opt-meta">AC Comfort &bull; 4 seats &bull; Top driver &bull; 3 min</span>
+                  </label>
+                </div>
+
+                <!-- SUV -->
+                <div style="position: relative;">
+                  <input type="radio" id="v-suv" name="booking_vehicle" value="suv" class="select-card-radio">
+                  <label for="v-suv" class="select-card-label">
+                    <div class="ride-opt-top">
+                      <span class="ride-opt-name">🚙 GoRide SUV XL</span>
+                      <span class="ride-opt-fare">₹249</span>
+                    </div>
+                    <span class="ride-opt-meta">Extra spacious &bull; Up to 6 seats &bull; 4 min away</span>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Notes for Driver -->
+            <div class="form-group">
+              <label for="b-notes" class="form-label" style="color: var(--text-main);">Driver Notes (Optional)</label>
+              <input type="text" id="b-notes" class="form-control" style="background: #F8FAFC; color: #0F172A; border-color: var(--border-light);" placeholder="e.g. Please wait near Gate 2">
+            </div>
+
+            <!-- Submit CTA -->
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: var(--space-md); padding: 1rem;">
+              <span>Confirm &amp; Dispatch Ride</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Column: Booking Summary & Route Mock -->
+        <aside class="summary-card">
+          <h3 class="summary-title">Fare Breakdown &amp; Summary</h3>
+          
+          <div class="summary-item">
+            <span>Estimated Distance:</span>
+            <strong>6.8 km</strong>
+          </div>
+          <div class="summary-item">
+            <span>Estimated Travel Time:</span>
+            <strong>22 mins</strong>
+          </div>
+          <div class="summary-item">
+            <span>Selected Vehicle:</span>
+            <strong>GoRide Sedan (AC)</strong>
+          </div>
+          <div class="summary-item">
+            <span>Base Fare:</span>
+            <strong>₹50.00</strong>
+          </div>
+          <div class="summary-item">
+            <span>Distance Fare (6.8 km):</span>
+            <strong>₹102.00</strong>
+          </div>
+          <div class="summary-item">
+            <span>Taxes &amp; Safety Surcharge:</span>
+            <strong>₹17.00</strong>
+          </div>
+          <div class="summary-item" style="color: var(--primary);">
+            <span>Promo Code (GORIDE20):</span>
+            <strong>- ₹20.00</strong>
+          </div>
+
+          <div class="summary-total">
+            <span>Estimated Total:</span>
+            <span>₹149.00</span>
+          </div>
+
+          <div style="margin-top: var(--space-lg); padding: var(--space-md); background: rgba(5, 211, 116, 0.08); border-radius: var(--radius-md); border: 1px solid rgba(5, 211, 116, 0.2);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">
+              <span>🛡️ Upfront Price Guarantee</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-dim); line-height: 1.45;">
+              No unexpected surges. The estimated fare covers your selected route, taxes, and passenger insurance.
+            </p>
+          </div>
+
+          <div style="margin-top: var(--space-md); font-size: 0.75rem; color: var(--text-dim); text-align: center;">
+            Static prototype demonstration data.
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 GoRide Technologies Inc. Portfolio prototype for Skyppy internship.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="rides.html">Vehicles</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
