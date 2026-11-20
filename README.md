@@ -1,8 +1,4 @@
-# GoRide – Online Ride Booking Platform
 
-> A modern, responsive ride-booking frontend prototype engineered purely in **HTML5 & CSS3** (zero frameworks, zero JavaScript). Designed for the HTML & CSS Developer Internship at **Skyppy** ([skyppy.app](https://www.skyppy.app)).
-
----
 
 ## 📌 Project Overview
 **GoRide** is a high-fidelity frontend portfolio project modeling a high-growth urban ride-hailing startup. It enables riders to explore city transit options (Bike Taxi, Auto Rickshaw, City Sedan, SUV XL), examine upfront transparent fares, test interactive route booking workflows, review safety measures, and browse company information.
